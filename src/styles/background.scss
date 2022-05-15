@@ -1,0 +1,28 @@
+/* Custom backgrounds and colors */
+.bg-black {
+  background: #0d0d0d;
+}
+
+.bg-theme {
+  background: var(--bg-theme) !important;
+}
+
+.bg-theme-inv {
+  background: var(--bg-theme-inv);
+}
+
+.bg-theme-1 {
+  background: var(--bg-theme-1) !important;
+}
+
+.bg-theme-hover:hover {
+  background: var(--bg-theme-2) !important;
+}
+
+.bg-shadow {
+  background: #000000c0;
+}
+
+.bg-custom-dark {
+  background: $main-color-dark;
+}

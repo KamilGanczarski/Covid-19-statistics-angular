@@ -1,0 +1,357 @@
+.btn {
+   outline: none !important;
+   -webkit-box-shadow: none !important;
+           box-shadow: none !important;
+   -webkit-transition: all .3s ease;
+      -moz-transition: all .3s ease;
+       -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+           transition: all .3s ease;
+}
+
+.btn:focus {
+   outline: none !important;
+   -webkit-box-shadow: none !important;
+           box-shadow: none !important;
+}
+
+/* Correct Bootstrap buttons */
+.collapse-icon-rotate,
+.dropdown-icon-rotate {
+   -webkit-transition: transform .3s ease;
+      -moz-transition: transform .3s ease;
+       -ms-transition: transform .3s ease;
+        -o-transition: transform .3s ease;
+           transition: transform .3s ease;
+   transform: rotate(0deg);
+}
+
+.right-rotate[aria-expanded=true] .collapse-icon-rotate,
+.right-rotate:not(.collapsed) .collapse-icon-rotate,
+.right-rotate.show .dropdown-icon-rotate {
+   transform: rotate(90deg);
+}
+
+.bottom-rotate[aria-expanded=true] .collapse-icon-rotate,
+.bottom-rotate:not(.collapsed) .collapse-icon-rotate,
+.bottom-rotate.show .dropdown-icon-rotate {
+   transform: rotate(180deg);
+}
+
+/* Manu button */
+.btn-menu {
+   z-index: 10;
+   width: 60px;
+   height: 40px;
+   cursor: pointer;
+   box-shadow: none;
+   outline: none !important;
+}
+
+.btn-menu span {
+   width: 80%;
+   height: 2px;
+   margin: 0 auto;
+   display: block;
+   background: #eee;
+   -webkit-transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+      -moz-transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+       -ms-transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+        -o-transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+           transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+}
+
+.btn-menu span:first-of-type {
+   transform: rotate(45deg) translate(2px, 2px);
+}
+
+.btn-menu span:nth-of-type(2) {
+   transform: translateX(-20px);
+   opacity: 0;
+}
+
+.btn-menu span:last-of-type {
+   transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.btn-menu.collapsed span {
+   transform: none;
+   opacity: 1;
+   margin: 5px auto;
+}
+
+/* Button in navbar, show underline when element is hovered */
+.text-with-underline {
+   padding-top: 12px;
+   padding-bottom: 7px;
+   color: #eee;
+   text-transform: uppercase;
+   font-weight: 600;
+   font-size: 13px;
+}
+
+.text-with-underline:hover {
+   color: #eee !important;
+}
+
+.hover-dark:hover {
+   background: #141414;
+}
+
+@media (min-width: 992px) {
+   .text-with-underline > div {
+      margin-top: 2px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 0%;
+      border-bottom: 1px solid $main-color;
+      -webkit-transition: width .3s ease;
+         -moz-transition: width .3s ease;
+          -ms-transition: width .3s ease;
+           -o-transition: width .3s ease;
+              transition: width .3s ease;
+   }
+
+   .text-with-underline:hover > :last-child {
+      width: 100%;
+   }
+
+   .text-with-underline.active > :last-child {
+      width: 100%;
+   }
+}
+
+/* Button text with X */
+@media (min-width: 992px) {
+   .btn-menu-x {
+      height: 30px !important;
+      z-index: 10;
+      cursor: pointer;
+      box-shadow: none;
+      outline: none !important;
+      padding-top: 7px;
+      color: #eee;
+   }
+
+   .btn-menu-x:not(.collapsed) {
+      color: #77777790 !important;
+   }
+
+   .btn-menu-x > div {
+      position: relative;
+      top: -4px;
+   }
+
+   .btn-menu-x:not(.collapsed) > div {
+      width: 0 !important;
+   }
+
+   .btn-menu-x > span:first-of-type,
+   .btn-menu-x > span:nth-of-type(2),
+   .btn-menu-x > span:nth-of-type(3) {
+      border-radius: 10px;
+      width: 30px;
+      height: 2px;
+      z-index: 11;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      top: 6px;
+      background: transparent;
+      -webkit-transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+         -moz-transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+          -ms-transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+           -o-transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+              transition: all 0.5s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+   }
+
+   .btn-menu-x:not(.collapsed) > span:first-of-type {
+      transform: rotate(45deg) translate(2px, 2px);
+      background: #eee;
+   }
+
+   .btn-menu-x:not(.collapsed) > span:nth-of-type(2) {
+      transform: rotate(45deg) translate(2px, 2px);
+      background: #eee;
+      opacity: 0;
+   }
+
+   .btn-menu-x:not(.collapsed) > span:nth-of-type(3) {
+      transform: rotate(-45deg) translate(1px, -1px);
+      background: #eee;
+   }
+
+   .btn-menu-x > span:nth-of-type(4) {
+      position: relative;
+      top: -4px;
+   }
+}
+
+/* Dropdown animation */
+.dropdown-menu {
+   max-height: 0;
+   display: block;
+   overflow: hidden;
+   opacity: 0;
+   -webkit-transition: all 0.7s ease;
+      -moz-transition: all 0.7s ease;
+       -ms-transition: all 0.7s ease;
+        -o-transition: all 0.7s ease;
+           transition: all 0.7s ease;
+}
+
+.dropdown-menu.show {
+   max-height: 300px;
+   opacity: 1;
+}
+
+.btn-ghost {
+   background: #000000c0;
+   color: #f8f9fa !important;
+}
+
+.btn-ghost:hover {
+   background: #000000a0;
+   color: #f8f9fa !important;
+}
+
+// Circle button with animation icon inside
+.circle-menu-btn {
+   width: 50px;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   border-radius: 50px;
+   font-size: 15px;
+   background: #000000cc;
+}
+
+.circle-menu-btn i {
+   color: #ffffffb3;
+   font-size: 20px;
+   -webkit-transition: all .2s ease;
+      -moz-transition: all .2s ease;
+       -ms-transition: all .2s ease;
+        -o-transition: all .2s ease;
+           transition: all .2s ease;
+}
+
+.circle-menu-btn:hover i {
+   font-size: 26px;
+}
+
+/* Btn sidebar */
+.btn-sidebar {
+   padding: 7px 0 7px 24px;
+   text-align: left;
+   font-size: 12px;
+}
+
+.btn-sidebar > span {
+   display: inline;
+   text-transform: uppercase;
+   font-weight: bold;
+}
+
+.btn-gray-2 {
+   color: #fff;
+   background: #1d1d1d;
+}
+
+.btn-gray-2:hover {
+   color: #fff;
+   background: #2d2d2d;
+}
+
+/* Button with show arrow onhover */
+.btn-slide-icon {
+   display: -webkit-box;                        /* OLD - iOS 6-, Safari 3.1-6 */
+   display: -moz-box;           /* OLD - Firefox 19- (buggy but mostly works) */
+   display: -ms-flexbox;                                   /* TWEENER - IE 10 */
+   display: -webkit-flex;                                     /* NEW - Chrome */
+   display: flex;                      /* NEW, Spec - Opera 12.1, Firefox 20+ */
+   position: relative;
+   padding-top: 6px;
+   padding-bottom: 6px;
+   padding-left: 30px !important;
+   padding-right: 30px !important;
+}
+
+.btn-slide-icon.show,
+.btn-slide-icon:hover {
+   padding-left: 20px !important;
+   padding-right: 40px !important;
+}
+
+.btn-slide-icon > i {
+   font-size: 20px;
+   line-height: 1;
+   position: absolute;
+   right: 40px;
+   color: transparent;
+   -webkit-transition: right .3s ease, color .2s ease;
+      -moz-transition: right .3s ease, color .2s ease;
+       -ms-transition: right .3s ease, color .2s ease;
+        -o-transition: right .3s ease, color .2s ease;
+           transition: right .3s ease, color .2s ease;
+}
+
+.btn-slide-icon.show > i,
+.btn-slide-icon:hover > i {
+   -webkit-transition: right .3s ease, color .2s ease .1s;
+      -moz-transition: right .3s ease, color .2s ease .1s;
+       -ms-transition: right .3s ease, color .2s ease .1s;
+        -o-transition: right .3s ease, color .2s ease .1s;
+           transition: right .3s ease, color .2s ease .1s;
+   right: 8px;
+   color: var(--text-theme);
+}
+
+.btn-slide-icon.show > i.light,
+.btn-slide-icon:hover > i.light {
+   color: #f8f9fa !important;
+}
+
+.btn-slide-icon.show > i.black,
+.btn-slide-icon:hover > i.black {
+   color: #222 !important;
+}
+
+.btn-slide-icon.show > i.custom,
+.btn-slide-icon:hover > i.custom {
+   color: $main-color;
+}
+
+.cursor-pointer {
+   cursor: pointer;
+}
+
+.btn-rounded {
+   padding: 4px 24px;
+   border: 2px solid;
+   border-radius: 20px;
+}
+
+.btn-circle-custom {
+   border: 2px solid;
+   border-radius: 20px;
+   padding-right: 5px;
+   padding-left: 5px;
+}
+
+.accordion-item.bg-transparent,
+.accordion-item.bg-transparent > h2 > button {
+   background: transparent;
+   outline: 0;
+   border-bottom: 2px solid var(--border-theme);
+}
+
+.accordion-item.bg-transparent > h2 > button:focus {
+   box-shadow: 0 0 0 0 transparent;
+}
+
+.accordion-item.bg-transparent > h2 > button::after {
+   display: none;
+}

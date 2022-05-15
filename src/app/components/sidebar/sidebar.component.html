@@ -1,0 +1,85 @@
+<nav class="fixed-top row sidebar-left border-end border-secondary">
+  <!-- Show sidebar -->
+  <a
+    class="circle-menu-btn btn-toggle-sidebar fixed"
+    data-bs-toggle="tooltip"
+    data-bs-placement="right"
+    title="Sidebar"
+    (click)="toggleSidebar()">
+    <fa-icon [icon]="faCoffee" class="text-light"></fa-icon>
+  </a>
+
+  <!-- Sidebar header -->
+  <div class="w-100 px-0">
+    <div class="div-under-navbar"></div>
+    <!-- Management -->
+    <div class="w-100 py-4 my-1">
+      <div class="w-100 m-0 text-center">
+        <a
+          href="/admin/home"
+          class="btn btn-sm text-custom btn-rounded border-custom btn-shine btn-shine-hover">
+          <span class="small text-uppercase font-weight-bold">
+            Management
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Management -->
+    <div class="w-100 row m-0">
+      <a
+        href="/admin/home"
+        class="btn btn-sm col m-0 btn-sidebar text-hover-light">
+        <fa-icon [icon]="faCoffee" class="pe-2"></fa-icon>
+        <span>Management</span>
+      </a>
+
+      <!-- Hide sidebar -->
+      <div class="d-flex align-items-center w-auto px-0">
+        <button
+          class="btn btn-sm px-3 py-1 btn-toggle-sidebar close"
+          (click)="toggleSidebar()">
+          <fa-icon
+            [icon]="faArrowLeft"
+            class="h5 m-0 text-hover-light"
+          ></fa-icon>
+      </button>
+      </div>
+    </div>
+
+    <div class="w-100 row m-0">
+      <a
+        href='/'
+        class="btn btn-sm w-100 btn-sidebar text-hover-light">
+        <fa-icon [icon]="faCoffee" class="pe-2"></fa-icon>
+        <span>label</span>
+      </a>
+    </div>
+
+    <div class="col-10 pt-3 mx-auto border-bottom"></div>
+  </div>
+
+  <!-- Sidebar content -->
+  <div class="container-fluid px-0 py-3">
+    <div class="w-100 row m-0">
+      <a
+        href='/'
+        class="btn btn-sm w-100 btn-sidebar text-hover-light">
+        <fa-icon [icon]="faCoffee" class="pe-2"></fa-icon>
+        <span>label</span>
+      </a>
+    </div>
+
+    <div class="col-10 pt-3 mx-auto border-bottom"></div>
+  </div>
+
+  <!-- Sidebar footer -->
+  <div class="w-100 py-3 px-0 mb-0 text-light align-self-end">
+    <a
+      href='/'
+      class="btn btn-sm w-100 btn-sidebar text-hover-light">
+        <fa-icon [icon]="faCoffee" class="pe-2"></fa-icon>
+        <span>label</span>
+    </a>
+  </div>
+</nav>

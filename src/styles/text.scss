@@ -1,0 +1,113 @@
+.text-custom {
+  color: $main-color !important;
+}
+
+.text-theme {
+  color: var(--text-theme) !important;
+}
+
+.text-theme-inv {
+  color: var(--text-theme-inv);
+}
+
+.text-theme-1 {
+  color: var(--text-theme-1) !important;
+}
+
+.text-theme-1-disable {
+  color: var(--text-theme-1-disable) !important;
+}
+
+// Text hover theme
+.text-hover-theme {
+  color: var(--text-hover-before);
+}
+
+.text-hover-theme:disabled {
+  color: var(--text-hover-before) !important;
+}
+
+.text-hover-theme:hover {
+  color: var(--text-hover-after);
+}
+
+.text-hover-theme.active {
+  color: var(--text-hover-after);
+}
+
+.text-hover-custom {
+  color: $main-color;
+}
+
+.text-hover-custom:disabled {
+  color: $main-color !important;
+}
+
+.text-hover-custom:hover {
+  color: $main-color-dark;
+}
+
+.text-hover-custom.active {
+  color: $main-color-dark;
+}
+
+.text-hover-danger {
+  color: #ed4656;
+}
+
+.text-hover-danger:disabled {
+  color: #ed4656 !important;
+}
+
+.text-hover-danger:hover {
+  color: #c81222;
+}
+
+.text-hover-danger.active {
+  color: #c81222;
+}
+
+.text-light-important {
+  color: #eee !important;
+}
+
+.text-black {
+  color: #0d0d0d;
+}
+
+.text-error {
+  color: #ff3040 !important;
+}
+
+// Text hover
+.text-hover-light {
+  color: #aaa;
+}
+
+.text-hover-light:disabled {
+  color: #aaa !important;
+}
+
+.text-hover-light:hover {
+  color: #fff;
+}
+
+.text-hover-light.active {
+  color: #fff;
+}
+
+.text-huge-2 {
+  font-size: 80px;
+}
+
+.title-with-x-btn {
+  width: calc(100% - 60px);
+  padding-left: 60px;
+}
+
+.text-shadow-dark {
+  text-shadow: -.7px 0 #80808060,
+                0 .7px #80808060,
+                .7px 0 #80808060,
+               0 -.7px #80808060;
+}
