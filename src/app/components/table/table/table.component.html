@@ -1,53 +1,55 @@
-<section class="w-100 row pb-5 m-0 justify-content-center">
-  <div class="col-sm-11 col-xl-11 row p-4 mx-auto bg-theme-1 rounded">
-    <app-scope-btn
-      [rowsPerPage]="rowsPerPage"
-      (onChangePageScope)="changePageScope($event)"
-    ></app-scope-btn>
-
-    <table class="table col-sm-12 mx-auto mb-4 text-center text-theme-1">
-      <!-- Header -->
-      <thead class="text-light">
-        <tr>
-          <td *ngFor="let sortOption of sortOptions" class="py-1">
-            <app-sort-button
-              [column]="sortOption"
-              [lastSort]="lastSort"
-              (onSortStats)="sortStats(sortOption)"
-            ></app-sort-button>
-          </td>
-        </tr>
-      </thead>
-      <tbody class="border-0">
-        <!-- Content -->
-        <tr
-          class="border-top table-row"
-          *ngFor="let country of countriesShow"
-        >
-          <td class="py-4 text-start">{{ country.Country }}</td>
-          <td class="py-4">{{ country.NewConfirmed }}</td>
-          <td class="py-4">{{ country.NewDeaths }}</td>
-          <td class="py-4">{{ country.NewRecovered }}</td>
-          <td class="py-4">{{ country.TotalConfirmed }}</td>
-          <td class="py-4">{{ country.TotalDeaths }}</td>
-          <td class="py-4">{{ country.TotalRecovered }}</td>
-        </tr>
-
-        <!-- No content -->
-        <tr
-          *ngIf="countriesShow && countriesShow.length === 0"
-          class="border-top table-row bg-theme-hover">
-          <td colspan="8" class="text-center small text-theme-1">
-            No data
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <app-pagination-btns
-      *ngIf="totalPages > 0"
-      [currPage]="currPage"
-      [totalPages]="totalPages"
-      (onChangePage)="changePage($event)"
-    ></app-pagination-btns>
+<section class="w-100 row px-2 pb-5 m-0 justify-content-center">
+  <div class="col-sm-12 row p-2">
+    <div class="p-5 bg-theme-1 rounded">
+      <app-scope-btn
+        [rowsPerPage]="rowsPerPage"
+        (onChangePageScope)="changePageScope($event)"
+      ></app-scope-btn>
+  
+      <table class="table col-sm-12 mx-auto mb-4 text-center text-theme-1">
+        <!-- Header -->
+        <thead class="text-light">
+          <tr>
+            <td *ngFor="let sortOption of sortOptions" class="py-1">
+              <app-sort-button
+                [column]="sortOption"
+                [lastSort]="lastSort"
+                (onSortStats)="sortStats(sortOption)"
+              ></app-sort-button>
+            </td>
+          </tr>
+        </thead>
+        <tbody class="border-0">
+          <!-- Content -->
+          <tr
+            class="border-top table-row"
+            *ngFor="let country of countriesShow"
+          >
+            <td class="py-4 text-start">{{ country.Country }}</td>
+            <td class="py-4">{{ country.NewConfirmed }}</td>
+            <td class="py-4">{{ country.NewDeaths }}</td>
+            <td class="py-4">{{ country.NewRecovered }}</td>
+            <td class="py-4">{{ country.TotalConfirmed }}</td>
+            <td class="py-4">{{ country.TotalDeaths }}</td>
+            <td class="py-4">{{ country.TotalRecovered }}</td>
+          </tr>
+  
+          <!-- No content -->
+          <tr
+            *ngIf="countriesShow && countriesShow.length === 0"
+            class="border-top table-row bg-theme-hover">
+            <td colspan="8" class="text-center small text-theme-1">
+              No data
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <app-pagination-btns
+        *ngIf="totalPages > 0"
+        [currPage]="currPage"
+        [totalPages]="totalPages"
+        (onChangePage)="changePage($event)"
+      ></app-pagination-btns>
+    </div>
   </div>
 </section>
