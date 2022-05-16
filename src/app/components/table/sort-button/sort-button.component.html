@@ -1,0 +1,21 @@
+<button
+  class="btn btn-sm w-100 px-0 py-2 fw-bold text-theme-1 text-start"
+  (click)="onSort(column)"
+  >
+  <span>{{ column }}</span>
+  <fa-icon
+    *ngIf="lastSort === column"
+    [icon]="faAngleDown"
+    class="ps-2 text-light"
+  ></fa-icon>
+  <fa-icon
+    *ngIf="lastSort === '-' + column"
+    [icon]="faAngleUp"
+    class="ps-2 text-light"
+    ></fa-icon>
+  <fa-icon
+    *ngIf="lastSort !== column && lastSort !== '-' + column"
+    [icon]="faAngleDown"
+    class="ps-2 text-dark"
+  ></fa-icon>
+</button>

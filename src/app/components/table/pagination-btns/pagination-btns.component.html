@@ -1,0 +1,55 @@
+<div class="col-sm-11 row pb-4 mx-auto justify-content-center">
+  <button
+    [disabled]="currPage === 0"
+    class="btn btn-sm w-auto px-1 mx-1 fw-bold text-hover-theme"
+    (click)="changePage(currPage - 1)">
+    <fa-icon [icon]="faAngleLeft" class="theme"></fa-icon>
+  </button>
+  
+  <div *ngIf="totalPages < 10" class="w-auto">
+    <button
+      *ngFor="let number of paginationBtns"
+      class="btn btn-sm w-auto px-2 mx-1 fw-bold text-hover-theme"
+      [ngClass]="{'active' : number === currPage}"
+      (click)="changePage(number)">
+      {{ number + 1 }}
+    </button>
+  </div>
+
+
+  <div *ngIf="totalPages >= 10" class="w-auto">
+    <button
+      *ngFor="let number of [0, 1, 2, 3]"
+      class="btn btn-sm w-auto px-2 mx-1 fw-bold text-hover-theme"
+      [ngClass]="{'active' : number === currPage}"
+      (click)="changePage(number)">
+      {{ number + 1 }}
+    </button>
+  </div>
+
+  <form *ngIf="totalPages >= 10" (ngSubmit)="onSubmitHandler()" class="w-auto">
+    <input
+      type="number"
+      name="paginationInput"
+      class="form-control form-control-sm w-auto mt-1 text-center form-control-short"
+      [(ngModel)]="paginationInput"
+      />
+  </form>
+
+  <div *ngIf="totalPages >= 10" class="w-auto">
+    <button
+      *ngFor="let number of paginationBtns.slice(paginationBtns.length - 4, paginationBtns.length)"
+      class="btn btn-sm w-auto px-2 mx-1 fw-bold text-hover-theme"
+      [ngClass]="{'active' : number === currPage}"
+      (click)="changePage(number)">
+      {{ number + 1 }}
+    </button>
+  </div>
+
+  <button
+    [disabled]="currPage === totalPages - 1"
+    class="btn btn-sm w-auto px-1 mx-1 fw-bold text-hover-theme"
+    (click)="changePage(currPage + 1)">
+    <fa-icon [icon]="faAngleRight" class="theme"></fa-icon>
+  </button>
+</div>

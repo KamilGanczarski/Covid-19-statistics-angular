@@ -279,13 +279,18 @@
    padding-right: 30px !important;
 }
 
+.btn-slide-icon::after {
+   border: 0;
+}
+
 .btn-slide-icon.show,
 .btn-slide-icon:hover {
    padding-left: 20px !important;
    padding-right: 40px !important;
 }
 
-.btn-slide-icon > i {
+.btn-slide-icon > i,
+.btn-slide-icon > fa-icon {
    font-size: 20px;
    line-height: 1;
    position: absolute;
@@ -299,7 +304,9 @@
 }
 
 .btn-slide-icon.show > i,
-.btn-slide-icon:hover > i {
+.btn-slide-icon:hover > i,
+.btn-slide-icon.show > fa-icon,
+.btn-slide-icon:hover > fa-icon {
    -webkit-transition: right .3s ease, color .2s ease .1s;
       -moz-transition: right .3s ease, color .2s ease .1s;
        -ms-transition: right .3s ease, color .2s ease .1s;
@@ -310,17 +317,23 @@
 }
 
 .btn-slide-icon.show > i.light,
-.btn-slide-icon:hover > i.light {
+.btn-slide-icon:hover > i.light,
+.btn-slide-icon.show > fa-icon.light,
+.btn-slide-icon:hover > fa-icon.light {
    color: #f8f9fa !important;
 }
 
 .btn-slide-icon.show > i.black,
-.btn-slide-icon:hover > i.black {
+.btn-slide-icon:hover > i.black,
+.btn-slide-icon.show > fa-icon.black,
+.btn-slide-icon:hover > fa-icon.black {
    color: #222 !important;
 }
 
 .btn-slide-icon.show > i.custom,
-.btn-slide-icon:hover > i.custom {
+.btn-slide-icon:hover > i.custom,
+.btn-slide-icon.show > fa-icon.custom,
+.btn-slide-icon:hover > fa-icon.custom {
    color: $main-color;
 }
 
