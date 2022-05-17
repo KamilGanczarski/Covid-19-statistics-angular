@@ -10,8 +10,10 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 })
 export class LatestUpdatesComponent implements OnInit {
   latestStats: Globals[] = [];
-  faPlus = faPlus;
   howMany: number = 0;
+
+  // Icons
+  faPlus = faPlus;
 
   constructor(private covid19StatsService: Covid19StatsService) {}
 

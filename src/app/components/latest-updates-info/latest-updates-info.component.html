@@ -1,0 +1,19 @@
+<p class="m-0 d-flex">
+  <span class="me-auto">{{ title }}</span>
+  <span class="text-custom">{{ info }}</span>
+  <fa-icon
+    *ngIf="i < length && info > nextInfo"
+    [icon]="faAngleUp"
+    class="ps-2 text-custom"
+  ></fa-icon>
+  <fa-icon
+    *ngIf="i < length && info < nextInfo"
+    [icon]="faAngleDown"
+    class="ps-2 text-danger"
+  ></fa-icon>
+  <fa-icon
+    *ngIf="i < length && info === nextInfo"
+    [icon]="faMinus"
+    class="ps-2 text-light"
+  ></fa-icon>
+</p>

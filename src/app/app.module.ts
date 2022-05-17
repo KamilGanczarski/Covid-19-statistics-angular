@@ -19,6 +19,7 @@ import { ShowGlobalsComponent } from './components/show-globals/show-globals.com
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
 import { MobileSortDropdownComponent } from './components/table/mobile-sort-dropdown/mobile-sort-dropdown.component';
 import { LatestUpdatesComponent } from './components/latest-updates/latest-updates.component';
+import { LatestUpdatesInfoComponent } from './components/latest-updates-info/latest-updates-info.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LatestUpdatesComponent } from './components/latest-updates/latest-updat
     ShowGlobalsComponent,
     CustomInputComponent,
     MobileSortDropdownComponent,
-    LatestUpdatesComponent
+    LatestUpdatesComponent,
+    LatestUpdatesInfoComponent
   ],
   imports: [
     BrowserModule,

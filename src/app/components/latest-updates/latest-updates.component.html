@@ -1,19 +1,31 @@
 <section class="w-100 row m-0">
-  <div *ngFor="let stats of latestStats"
+  <div *ngFor="let stats of latestStats; let i = index"
     class="w-100 p-3 ms-2 my-2 rounded bg-theme-1">
     <h4 class="text-center">{{ stats.dateFrontent }}</h4>
-    <p class="m-0">
-      NewConfirmed: 
-      <span class="text-custom">{{ stats.NewConfirmed }}</span>
-    </p>
-    <p class="m-0">
-      NewDeaths: 
-      <span class="text-custom">{{ stats.NewDeaths }}</span>
-    </p>
-    <p class="m-0">
-      NewRecovered: 
-      <span class="text-custom">{{ stats.NewRecovered }}</span>
-    </p>
+
+    <app-latest-updates-info
+      title="New Confirmed: "
+      [info]="stats.NewConfirmed"
+      [nextInfo]="i < latestStats.length-1 ? latestStats[i+1].NewConfirmed : 0"
+      [i]="i"
+      [length]="latestStats.length-1"
+    ></app-latest-updates-info>
+
+    <app-latest-updates-info
+      title="New Deaths: "
+      [info]="stats.NewDeaths"
+      [nextInfo]="i < latestStats.length-1 ? latestStats[i+1].NewDeaths : 0"
+      [i]="i"
+      [length]="latestStats.length-1"
+    ></app-latest-updates-info>
+    
+    <app-latest-updates-info
+      title="New Recovered: "
+      [info]="stats.NewRecovered"
+      [nextInfo]="i < latestStats.length-1 ? latestStats[i+1].NewRecovered : 0"
+      [i]="i"
+      [length]="latestStats.length-1"
+    ></app-latest-updates-info>
   </div>
 
   <div
