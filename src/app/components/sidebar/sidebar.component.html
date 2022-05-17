@@ -26,12 +26,7 @@
 
     <!-- Management -->
     <div class="w-100 row m-0">
-      <a
-        href="/admin/home"
-        class="btn btn-sm col m-0 btn-sidebar text-hover-light">
-        <fa-icon [icon]="faAngleRight" class="pe-2"></fa-icon>
-        <span>Management</span>
-      </a>
+      <h3 class="col ps-4 py-2 m-0 fw-bold text-theme-1">Recent updates</h3>
 
       <!-- Hide sidebar -->
       <div class="d-flex align-items-center w-auto px-0">
@@ -45,14 +40,14 @@
       </div>
     </div>
 
-    <div class="col-10 pt-3 mx-auto border-bottom"></div>
+    <div class="col-10 pt-2 mx-auto border-bottom"></div>
   </div>
 
   <!-- Sidebar content -->
   <div class="container-fluid px-0 py-3">
-    Sidebar content
+    <app-latest-updates></app-latest-updates>
 
-    <div class="col-10 pt-3 mx-auto border-bottom"></div>
+    <!-- <div class="col-10 pt-3 mx-auto border-bottom"></div> -->
   </div>
 
   <!-- Sidebar footer -->

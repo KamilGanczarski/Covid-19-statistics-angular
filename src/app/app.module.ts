@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { ShowGlobalsComponent } from './components/show-globals/show-globals.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
 import { MobileSortDropdownComponent } from './components/table/mobile-sort-dropdown/mobile-sort-dropdown.component';
+import { LatestUpdatesComponent } from './components/latest-updates/latest-updates.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MobileSortDropdownComponent } from './components/table/mobile-sort-drop
     PaginationBtnsComponent,
     ShowGlobalsComponent,
     CustomInputComponent,
-    MobileSortDropdownComponent
+    MobileSortDropdownComponent,
+    LatestUpdatesComponent
   ],
   imports: [
     BrowserModule,

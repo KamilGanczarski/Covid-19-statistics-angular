@@ -6,6 +6,7 @@ export interface Globals {
   NewRecovered: number;
   TotalRecovered: number;
   Date: string;
+  dateFrontent: string;
 }
 
 export interface Country {
