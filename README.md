@@ -1,6 +1,12 @@
-# Covid19StatisticsAngular
+# Covid 19 Statistics Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+Project to sort and filter data from free API https://covid19api.com/ about covid 19.
+
+## Install dependencies
+
+```
+npm install
+```
 
 ## Development server
 
