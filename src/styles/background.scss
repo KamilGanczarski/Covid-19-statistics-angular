@@ -26,3 +26,7 @@
 .bg-custom-dark {
   background: $main-color-dark;
 }
+
+.border-theme {
+  border-color: var(--border-theme) !important;
+}

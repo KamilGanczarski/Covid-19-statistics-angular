@@ -1,0 +1,41 @@
+<div class="col-12 px-0 pb-1 m-0">
+  <div ngbDropdown class="dropdown w-auto">
+    <button
+      ngbDropdownToggle
+      class="btn btn-sm w-auto fw-bold btn-slide-icon"
+      id="dropdown-menu-6"
+      data-bs-toggle="dropdown"
+      aria-expanded="false">
+      <span class="text-theme">Sort option: </span>
+      <fa-icon [icon]="faAngleDown" class="theme"></fa-icon>
+    </button>
+    <div
+      ngbDropdownMenu
+      class="dropdown-menu shadow border border-theme bg-theme"
+      aria-labelledby="dropdown-menu-6">
+      <button
+        ngbDropdownItem
+        *ngFor="let sortOption of sortOptions"
+        class="w-100 btn px-0 py-1 rounded-0 text-center bg-theme text-hover-theme"
+        [ngClass]="{'active' : sortOption === lastSort}"
+        (click)="onSort(sortOption)">
+        {{ sortOption }}
+        <fa-icon
+          *ngIf="lastSort === sortOption"
+          [icon]="faAngleDown"
+          class="ps-2 text-light"
+        ></fa-icon>
+        <fa-icon
+          *ngIf="lastSort === '-' + sortOption"
+          [icon]="faAngleUp"
+          class="ps-2 text-light"
+          ></fa-icon>
+        <fa-icon
+          *ngIf="lastSort !== sortOption && lastSort !== '-' + sortOption"
+          [icon]="faAngleDown"
+          class="ps-2 text-dark"
+        ></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

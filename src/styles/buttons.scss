@@ -27,12 +27,14 @@
 }
 
 .right-rotate[aria-expanded=true] .collapse-icon-rotate,
+.collapse-icon-rotate[aria-expanded=true],
 .right-rotate:not(.collapsed) .collapse-icon-rotate,
 .right-rotate.show .dropdown-icon-rotate {
    transform: rotate(90deg);
 }
 
 .bottom-rotate[aria-expanded=true] .collapse-icon-rotate,
+.collapse-icon-rotate[aria-expanded=true],
 .bottom-rotate:not(.collapsed) .collapse-icon-rotate,
 .bottom-rotate.show .dropdown-icon-rotate {
    transform: rotate(180deg);

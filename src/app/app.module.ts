@@ -17,6 +17,7 @@ import { PaginationBtnsComponent } from './components/table/pagination-btns/pagi
 import { FormsModule } from '@angular/forms';
 import { ShowGlobalsComponent } from './components/show-globals/show-globals.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
+import { MobileSortDropdownComponent } from './components/table/mobile-sort-dropdown/mobile-sort-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CustomInputComponent } from './components/custom-input/custom-input.com
     ScopeBtnComponent,
     PaginationBtnsComponent,
     ShowGlobalsComponent,
-    CustomInputComponent
+    CustomInputComponent,
+    MobileSortDropdownComponent
   ],
   imports: [
     BrowserModule,

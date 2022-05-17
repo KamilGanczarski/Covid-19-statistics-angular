@@ -20,6 +20,7 @@ export interface Country {
   NewRecovered: number;
   TotalRecovered: string;
   Date: number;
+  isCollapsed: boolean;
 }
 
 export interface Covid19Stats {

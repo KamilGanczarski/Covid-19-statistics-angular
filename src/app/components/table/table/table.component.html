@@ -1,13 +1,21 @@
 <section class="w-100 row px-2 pb-5 m-0 justify-content-center">
   <div class="col-sm-12 row p-2">
     <div class="p-5 bg-theme-1 rounded">
-      <app-custom-input
-        class="pb-4"
-        name="search-country"
-        label="Search country"
-        (onChangeValue)="changeSearch($event)"
-        pxLg="4"
-      ></app-custom-input>
+      <div class="col-sm-12 col-md-10 col-lg-8 pb-4 mx-auto">
+        <app-custom-input
+          name="search-country"
+          label="Search country"
+          (onChangeValue)="changeSearch($event)"
+          pxLg="4"
+        ></app-custom-input>
+      </div>
+
+      <app-mobile-sort-dropdown
+        class="d-flex d-xl-none"
+        [lastSort]="lastSort"
+        [sortOptions]="sortOptions"
+        (onSortStats)="sortStats($event)"
+      ></app-mobile-sort-dropdown>
 
       <app-scope-btn
         [rowsPerPage]="rowsPerPage"
@@ -17,7 +25,8 @@
       <table class="table col-sm-12 mx-auto mb-4 text-center text-theme-1">
         <!-- Header -->
         <thead class="text-light">
-          <tr>
+          <!-- Desktop version -->
+          <tr class="d-none d-xl-table-row">
             <td *ngFor="let sortOption of sortOptions" class="py-1">
               <app-sort-button
                 [column]="sortOption"
@@ -26,11 +35,18 @@
               ></app-sort-button>
             </td>
           </tr>
+          <!-- Mobile version -->
+          <tr class="d-table-row d-xl-none">
+            <td class="py-1">
+              Country
+            </td>
+          </tr>
         </thead>
+        <!-- Content -->
         <tbody class="border-0">
-          <!-- Content -->
+          <!-- Desktop version -->
           <tr
-            class="border-top table-row"
+            class="border-top border-theme d-none d-xl-table-row"
             *ngFor="let country of countriesShow"
           >
             <td class="py-4 text-start">{{ country.Country }}</td>
@@ -40,6 +56,58 @@
             <td class="py-4">{{ country.TotalConfirmed }}</td>
             <td class="py-4">{{ country.TotalDeaths }}</td>
             <td class="py-4">{{ country.TotalRecovered }}</td>
+          </tr>
+
+          <!-- Mobile version -->
+          <tr
+            class="border-top border-theme d-table-row d-xl-none"
+            *ngFor="let country of countriesShow"
+          >
+            <td class="py-4 text-start">
+              <div class="d-flex justify-content-between text-items-center">
+                <span class="align-self-center">{{ country.Country }}</span>
+                <button
+                  type="button"
+                  class="btn text-hover-theme collapse-icon-rotate"
+                  (click)="collapse_toggle(country.ID)"
+                  [attr.aria-expanded]="!country.isCollapsed"
+                  aria-controls="collapseExample">
+                  <fa-icon
+                    [icon]="faAngleDown"
+                    class="icon-down-open text-custom">
+                  </fa-icon>
+                </button>
+              </div>
+              <div
+                class="w-100 row mx-0 p-2 pt-4 mt-3 border-top border-dark"
+                #collapse="ngbCollapse"
+                [(ngbCollapse)]="country.isCollapsed">
+                <p class="col-6 py-2 px-0 mx-0">
+                  <b>NewConfirmed: </b>
+                  <span class="text-custom">{{ country.NewConfirmed }}</span>
+                </p>
+                <p class="col-6 py-2 px-0 mx-0">
+                  <b>NewDeaths: </b>
+                  <span class="text-custom">{{ country.NewDeaths }}</span>
+                </p>
+                <p class="col-6 py-2 px-0 mx-0">
+                  <b>NewRecovered: </b>
+                  <span class="text-custom">{{ country.NewRecovered }}</span>
+                </p>
+                <p class="col-6 py-2 px-0 mx-0">
+                  <b>TotalConfirmed: </b>
+                  <span class="text-custom">{{ country.TotalConfirmed }}</span>
+                </p>
+                <p class="col-6 py-2 px-0 mx-0">
+                  <b>TotalDeaths: </b>
+                  <span class="text-custom">{{ country.TotalDeaths }}</span>
+                </p>
+                <p class="col-6 py-2 px-0 mx-0">
+                  <b>TotalRecovered: </b>
+                  <span class="text-custom">{{ country.TotalRecovered }}</span>
+                </p>
+              </div>
+            </td>
           </tr>
   
           <!-- No content -->

@@ -29,14 +29,16 @@ export class PaginationBtnsComponent implements OnInit {
 
   onSubmitHandler() {
     if (this.paginationInput) {
-      this.changePage(this.paginationInput-1);
+      this.changePage(this.paginationInput - 1);
     }
   }
 
   changePage(newPage: number) {
     // Check wrong table page
-    if (newPage < 0 || newPage > this.totalPages)
+    if (newPage < 0 || newPage > this.totalPages) {
+      this.paginationInput = undefined;
       return;
+    }
 
     if (newPage > 3 && newPage < this.totalPages - 4) {
       this.paginationInput = newPage + 1;
@@ -49,5 +51,11 @@ export class PaginationBtnsComponent implements OnInit {
 
   ngOnChanges() {
     this.createPaginationBtns();
+  }
+
+  changeValue() {
+    if (this.paginationInput) {
+      this.changePage(this.paginationInput - 1);
+    }
   }
 }

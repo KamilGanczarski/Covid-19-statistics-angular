@@ -1,4 +1,4 @@
-<div class="col-sm-11 row pb-4 mx-auto justify-content-center">
+<div class="col-sm-11 row pb-4 mx-auto d-flex align-items-center justify-content-center">
   <button
     [disabled]="currPage === 0"
     class="btn btn-sm w-auto px-1 mx-1 fw-bold text-hover-theme"
@@ -28,12 +28,33 @@
   </div>
 
   <form *ngIf="totalPages >= 10" (ngSubmit)="onSubmitHandler()" class="w-auto">
-    <input
+    <!-- <input
       type="number"
       name="paginationInput"
       class="form-control form-control-sm w-auto mt-1 text-center form-control-short"
       [(ngModel)]="paginationInput"
+      /> -->
+
+    <div class="form-group form-group-custom w-100 px-0 mb-2">
+      <!-- Input -->
+      <input
+        type="number"
+        name="paginationInput"
+        id="paginationInput"
+        placeholder=" "
+        class="form-control-custom w-100 px-3 py-4 mt-3 text-theme form-control-short"
+        [(ngModel)]="paginationInput"
+        (change)="changeValue()"
+        min="0"
+        [attr.max]="totalPages"
       />
+      <!-- Label -->
+      <label
+        for="paginationInput"
+        class="form-label-custom ps-3 ms-xl-3">
+        Strona
+      </label>
+    </div>
   </form>
 
   <div *ngIf="totalPages >= 10" class="w-auto">

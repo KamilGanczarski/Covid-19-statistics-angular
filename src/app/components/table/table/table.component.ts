@@ -43,7 +43,10 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.covid19StatsService.getStats().subscribe((stats) => {
       this.countries = stats.Countries;
-      this.countriesFiltered = stats.Countries;
+      this.countries.forEach(country => {
+        country.isCollapsed = true;
+      })
+      this.countriesFiltered = this.countries;
       this.globals = stats.Global;
       this.totalPages = Math.ceil(this.countries.length / this.rowsPerPage);
       this.sortStats("ID");
@@ -97,15 +100,26 @@ export class TableComponent implements OnInit {
         (this.currPage + 1) * this.rowsPerPage
       );
       return;
-    }
-    newSearchValue = newSearchValue.toLowerCase();
-
-    this.countriesFiltered = this.countries
-      .filter(country => country.Country.toLowerCase().includes(newSearchValue));
+    } else {
+      newSearchValue = newSearchValue.toLowerCase();
   
-    this.currPage = 0;
-    this.totalPages = Math.ceil(this.countriesFiltered.length / this.rowsPerPage);
+      this.countriesFiltered = this.countries
+        .filter(country => country.Country.toLowerCase().includes(newSearchValue));
+    
+      this.currPage = 0;
+      this.totalPages = Math.ceil(this.countriesFiltered.length / this.rowsPerPage);
+    }
+
     this.changePageScope(this.rowsPerPage);
     this.sortStats(this.currentSort);
+  }
+
+  collapse_toggle(id: string) {
+    this.countriesShow.forEach(country => {
+      if (country.ID === id) {
+        country.isCollapsed = !country.isCollapsed;
+        return;
+      }
+    });
   }
 }
