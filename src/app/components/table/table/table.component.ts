@@ -15,10 +15,6 @@ export class TableComponent implements OnInit {
   countriesShow!: Country[];
 
   // Sort
-  faAngleDown = faAngleDown;
-  faAngleUp = faAngleUp;
-
-  // Sort
   currentSort: keyof Country = 'ID';
   lastSort: string = 'ID';
 
@@ -37,6 +33,10 @@ export class TableComponent implements OnInit {
     'TotalDeaths',
     'TotalRecovered'
   ];
+
+  // Icons
+  faAngleDown = faAngleDown;
+  faAngleUp = faAngleUp;
 
   constructor(private covid19StatsService: Covid19StatsService) {}
 
@@ -79,6 +79,7 @@ export class TableComponent implements OnInit {
       return;
 
     this.rowsPerPage = rowsPerPageNew;
+    this.totalPages = Math.ceil(this.countries.length / this.rowsPerPage);
     this.countriesShow = this.countriesFiltered.slice(
       this.currPage * this.rowsPerPage,
       (this.currPage + 1) * this.rowsPerPage
@@ -94,27 +95,22 @@ export class TableComponent implements OnInit {
   }
 
   changeSearch(newSearchValue: string) {
-    if (newSearchValue == '') {
-      this.countriesFiltered = this.countries.slice(
-        this.currPage * this.rowsPerPage,
-        (this.currPage + 1) * this.rowsPerPage
-      );
-      return;
+    if (newSearchValue === '') {
+      this.countriesFiltered = this.countries;
     } else {
       newSearchValue = newSearchValue.toLowerCase();
   
       this.countriesFiltered = this.countries
         .filter(country => country.Country.toLowerCase().includes(newSearchValue));
-    
-      this.currPage = 0;
-      this.totalPages = Math.ceil(this.countriesFiltered.length / this.rowsPerPage);
     }
 
+    this.totalPages = Math.ceil(this.countriesFiltered.length / this.rowsPerPage);
+    this.currPage = 0;
     this.changePageScope(this.rowsPerPage);
     this.sortStats(this.currentSort);
   }
 
-  collapse_toggle(id: string) {
+  collapseToggle(id: string) {
     this.countriesShow.forEach(country => {
       if (country.ID === id) {
         country.isCollapsed = !country.isCollapsed;

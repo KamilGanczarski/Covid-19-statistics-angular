@@ -5,7 +5,7 @@
     data-bs-toggle="tooltip"
     data-bs-placement="right"
     title="Sidebar">
-    <fa-icon [icon]="faCoffee" class="text-light"></fa-icon>
+    <fa-icon [icon]="faAngleRight" class="text-light"></fa-icon>
   </a>
 
   <!-- Sidebar header -->
@@ -29,7 +29,7 @@
       <a
         href="/admin/home"
         class="btn btn-sm col m-0 btn-sidebar text-hover-light">
-        <fa-icon [icon]="faCoffee" class="pe-2"></fa-icon>
+        <fa-icon [icon]="faAngleRight" class="pe-2"></fa-icon>
         <span>Management</span>
       </a>
 
@@ -38,20 +38,11 @@
         <button
           class="btn btn-sm px-3 py-1 btn-toggle-sidebar close">
           <fa-icon
-            [icon]="faArrowLeft"
+            [icon]="faAngleLeft"
             class="h5 m-0 text-hover-light"
           ></fa-icon>
       </button>
       </div>
-    </div>
-
-    <div class="w-100 row m-0">
-      <a
-        href='/'
-        class="btn btn-sm w-100 btn-sidebar text-hover-light">
-        <fa-icon [icon]="faCoffee" class="pe-2"></fa-icon>
-        <span>label</span>
-      </a>
     </div>
 
     <div class="col-10 pt-3 mx-auto border-bottom"></div>
@@ -59,25 +50,13 @@
 
   <!-- Sidebar content -->
   <div class="container-fluid px-0 py-3">
-    <div class="w-100 row m-0">
-      <a
-        href='/'
-        class="btn btn-sm w-100 btn-sidebar text-hover-light">
-        <fa-icon [icon]="faCoffee" class="pe-2"></fa-icon>
-        <span>label</span>
-      </a>
-    </div>
+    Sidebar content
 
     <div class="col-10 pt-3 mx-auto border-bottom"></div>
   </div>
 
   <!-- Sidebar footer -->
   <div class="w-100 py-3 px-0 mb-0 text-light align-self-end">
-    <a
-      href='/'
-      class="btn btn-sm w-100 btn-sidebar text-hover-light">
-        <fa-icon [icon]="faCoffee" class="pe-2"></fa-icon>
-        <span>label</span>
-    </a>
+    Sidebar footer
   </div>
 </nav>

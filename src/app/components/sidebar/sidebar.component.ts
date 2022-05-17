@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faArrowLeft, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,8 +7,8 @@ import { faArrowLeft, faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  faArrowLeft = faArrowLeft;
-  faCoffee = faCoffee;
+  faAngleLeft = faAngleLeft;
+  faAngleRight = faAngleRight;
 
   constructor() {}
 
