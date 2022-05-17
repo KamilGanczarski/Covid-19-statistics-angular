@@ -12,9 +12,13 @@ export class SidebarComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
-
-  toggleSidebar(): void {
-    document.querySelectorAll(".Sidebar")[0].classList.toggle("toggled");
+  ngOnInit(): void {
+    const btns = document.querySelectorAll('.btn-toggle-sidebar');
+    for (let i = 0; i < btns.length; i++) {
+      const DOMelement = btns[i];
+      DOMelement.addEventListener('click', () => {
+        document.querySelectorAll(".Sidebar")[0].classList.toggle("toggled");
+      })
+    }
   }
 }

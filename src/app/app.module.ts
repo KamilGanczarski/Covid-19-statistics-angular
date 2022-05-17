@@ -16,6 +16,7 @@ import { ScopeBtnComponent } from './components/table/scope-btn/scope-btn.compon
 import { PaginationBtnsComponent } from './components/table/pagination-btns/pagination-btns.component';
 import { FormsModule } from '@angular/forms';
 import { ShowGlobalsComponent } from './components/show-globals/show-globals.component';
+import { CustomInputComponent } from './components/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ShowGlobalsComponent } from './components/show-globals/show-globals.com
     SortButtonComponent,
     ScopeBtnComponent,
     PaginationBtnsComponent,
-    ShowGlobalsComponent
+    ShowGlobalsComponent,
+    CustomInputComponent
   ],
   imports: [
     BrowserModule,

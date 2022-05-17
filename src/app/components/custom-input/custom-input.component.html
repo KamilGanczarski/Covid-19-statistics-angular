@@ -1,0 +1,22 @@
+<div class="form-group form-group-custom w-100 px-0 px-lg-${{pxLg}} mb-2">
+  <!-- Input -->
+  <input
+    type="text"
+    [attr.name]="name"
+    [attr.id]="name"
+    placeholder=" "
+    [attr.required]="!optionally"
+    class="form-control-custom w-100 px-3 py-4 mt-3 text-theme"
+    [(ngModel)]="value"
+    (change)="changeValue()"
+    [disabled]="disabled"
+  />
+  <!-- Label -->
+  <label
+    [attr.for]="name"
+    class="form-label-custom ps-3 ps-xl-${{pxLg}} ms-xl-3">
+    {{ label }}
+  </label>
+  <!-- Optionaly text -->
+  <p *ngIf="optionally" class="pt-2 m-0 small">(optionally)</p>
+</div>

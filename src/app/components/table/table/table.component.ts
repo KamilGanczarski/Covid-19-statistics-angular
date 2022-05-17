@@ -11,6 +11,7 @@ import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 export class TableComponent implements OnInit {
   globals?: Globals;
   countries!: Country[];
+  countriesFiltered!: Country[];
   countriesShow!: Country[];
 
   // Sort
@@ -42,6 +43,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.covid19StatsService.getStats().subscribe((stats) => {
       this.countries = stats.Countries;
+      this.countriesFiltered = stats.Countries;
       this.globals = stats.Global;
       this.totalPages = Math.ceil(this.countries.length / this.rowsPerPage);
       this.sortStats("ID");
@@ -59,7 +61,7 @@ export class TableComponent implements OnInit {
     ascending = !ascending;
 
     this.countriesShow = this.covid19StatsService.sortData(
-      this.countries,
+      this.countriesFiltered,
       column,
       ascending
     );
@@ -74,7 +76,7 @@ export class TableComponent implements OnInit {
       return;
 
     this.rowsPerPage = rowsPerPageNew;
-    this.countriesShow = this.countries.slice(
+    this.countriesShow = this.countriesFiltered.slice(
       this.currPage * this.rowsPerPage,
       (this.currPage + 1) * this.rowsPerPage
     );
@@ -82,9 +84,28 @@ export class TableComponent implements OnInit {
 
   changePage(newPage: number): void {
     this.currPage = newPage;
-    this.countriesShow = this.countries.slice(
+    this.countriesShow = this.countriesFiltered.slice(
       this.currPage * this.rowsPerPage,
       (this.currPage + 1) * this.rowsPerPage
     );
+  }
+
+  changeSearch(newSearchValue: string) {
+    if (newSearchValue == '') {
+      this.countriesFiltered = this.countries.slice(
+        this.currPage * this.rowsPerPage,
+        (this.currPage + 1) * this.rowsPerPage
+      );
+      return;
+    }
+    newSearchValue = newSearchValue.toLowerCase();
+
+    this.countriesFiltered = this.countries
+      .filter(country => country.Country.toLowerCase().includes(newSearchValue));
+  
+    this.currPage = 0;
+    this.totalPages = Math.ceil(this.countriesFiltered.length / this.rowsPerPage);
+    this.changePageScope(this.rowsPerPage);
+    this.sortStats(this.currentSort);
   }
 }

@@ -1,6 +1,14 @@
 <section class="w-100 row px-2 pb-5 m-0 justify-content-center">
   <div class="col-sm-12 row p-2">
     <div class="p-5 bg-theme-1 rounded">
+      <app-custom-input
+        class="pb-4"
+        name="search-country"
+        label="Search country"
+        (onChangeValue)="changeSearch($event)"
+        pxLg="4"
+      ></app-custom-input>
+
       <app-scope-btn
         [rowsPerPage]="rowsPerPage"
         (onChangePageScope)="changePageScope($event)"

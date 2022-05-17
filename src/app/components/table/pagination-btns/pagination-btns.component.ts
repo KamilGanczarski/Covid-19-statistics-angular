@@ -20,6 +20,10 @@ export class PaginationBtnsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.createPaginationBtns();
+  }
+
+  createPaginationBtns() {
     this.paginationBtns = [...Array(this.totalPages).keys()];
   }
 
@@ -41,5 +45,9 @@ export class PaginationBtnsComponent implements OnInit {
     }
 
     this.onChangePage.emit(newPage);
+  }
+
+  ngOnChanges() {
+    this.createPaginationBtns();
   }
 }
