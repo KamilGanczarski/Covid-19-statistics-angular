@@ -79,7 +79,7 @@ export class TableComponent implements OnInit {
       return;
 
     this.rowsPerPage = rowsPerPageNew;
-    this.totalPages = Math.ceil(this.countries.length / this.rowsPerPage);
+    this.totalPages = Math.ceil(this.countriesFiltered.length / this.rowsPerPage);
     this.countriesShow = this.countriesFiltered.slice(
       this.currPage * this.rowsPerPage,
       (this.currPage + 1) * this.rowsPerPage
@@ -102,11 +102,11 @@ export class TableComponent implements OnInit {
   
       this.countriesFiltered = this.countries
         .filter(country => country.Country.toLowerCase().includes(newSearchValue));
+    console.log(this.countriesFiltered)
     }
 
     this.totalPages = Math.ceil(this.countriesFiltered.length / this.rowsPerPage);
     this.currPage = 0;
-    this.changePageScope(this.rowsPerPage);
     this.sortStats(this.currentSort);
   }
 
