@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "Covid-19-statistics-angular"
+  "defaultProject": "Covid-19-statistics-angular",
+  "cli": {
+    "analytics": false
+  }
 }
