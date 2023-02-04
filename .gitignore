@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Extension
-/.vscode
+/.angular
